@@ -4,25 +4,27 @@ function addStyles() {
     let styles = `
 
     * {
-    cursor: none;
+    cursor: none !important;
     }
 
-    .cursor {
+    html:hover .cursor, scrollbar:hover .cursor {
         pointer-events: none;
         transform: translate(-50%, -50%);
         width: 25px;
         aspect-ratio: 1/1;
-        border: black 2px solid;
+        border: black 3px solid;
         border-radius: 100%;
         position: absolute;
-        transition: width 0.2s, box-shadow 0.2s, border 0.2s;
-        box-shadow: rgb(0,0,0,0.25) 0 2px 10px 0;
+        top: 0;
+        left: 0;
+        transition: all 0.1s, width 0.2s, box-shadow 0.2s, border 0.2s;
+        box-shadow: rgb(0,0,0,0.25) 0 8px 30px 0;
+        background: rgb(255,255,255);
         z-index: 1000;
     }
     .cursorDown {
         width: 17.5px;
-        box-shadow:  rgb(0,0,0,0.3) 0 1px 6px 0;
-        border: 2px solid rgb(0,0,0,0.7)
+        box-shadow:  rgb(0,0,0,0.3) 0 1px 3px 0;
     }
     `
 
@@ -46,11 +48,16 @@ let cursor = document.getElementsByClassName("cursor")[0]
 //
 
 window.addEventListener("mousemove", followCursor)
+window.addEventListener("wheel", followCursor)
+window.addEventListener("mousedown", followCursor)
+window.addEventListener("mouseup", followCursor)
 
 function followCursor(e) {
 
-    cursor.style.top = e.pageY + "px"
-    cursor.style.left = e.pageX + "px"
+    let top = "calc(" + cursor.scrollHeight * -0.5 + "px + " + e.pageY + "px)"
+    let left = "calc(" + cursor.scrollWidth * -0.5 + "px + " + e.pageX + "px)"
+
+    cursor.style.transform = "translate(" + left + ", " + top + ")"
 }
 
 //

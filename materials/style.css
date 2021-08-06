@@ -19,6 +19,7 @@ body {
     --secondaryShade: rgb(245, 242, 248);
     --tertiaryShade: rgb(47, 48, 66);
     --quaternaryShade: rgb(51, 52, 71);
+    min-height: 400vh;
 }
 
 body::-webkit-scrollbar {
