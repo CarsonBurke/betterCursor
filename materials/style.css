@@ -38,3 +38,24 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 /*CONTENT*/
+
+.button {
+    padding: 10px 40px;
+    background-color: rgb(22, 104, 255);
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 6px 0;
+    margin: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 100px;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    box-shadow: rgba(0, 0, 0, 0.6) 0 2px 6px 0, inset rgba(0, 0, 0, 0.4) 0 0 0 1000px;
+}
+
+.button:focus {
+    box-shadow: rgba(0, 0, 0, 0.3) 0 12px 18px 0, inset rgba(255, 255, 255, 0.3) 0 0 0 1000px;
+}

@@ -43,8 +43,8 @@ window.addEventListener("mouseup", followCursor)
 
 function followCursor(e) {
 
-    let top = cursor.scrollHeight * -0.5 + e.pageY + "px"
-    let left = cursor.scrollWidth * -0.5 + e.pageX + "px"
+    let top = cursor.scrollHeight * -0.1 + e.pageY + "px"
+    let left = cursor.scrollWidth * -0.1 + e.pageX + "px"
 
     cursor.style.transform = "translate(" + left + ", " + top + ")"
 }
