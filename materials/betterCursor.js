@@ -12,6 +12,7 @@ function addStyles() {
     .cursor {
         display: block;
         pointer-events: none;
+        user-select: none;
         transform: translate(-50%, -50%);
         width: 30px;
         aspect-ratio: 1/1;
@@ -22,7 +23,7 @@ function addStyles() {
         z-index: 1000;
     }
     .cursorDown {
-        width: 17.5px;
+        width: 20px;
     }
     `
 
